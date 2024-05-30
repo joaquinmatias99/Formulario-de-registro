@@ -1,39 +1,123 @@
+/* Define CSS variables for the default theme */
+:root {
+    --bg-color: #457d97;               /* Background color */
+    --bg-color-container: #fffffd;     /* Container background color */
+    --bg-color-button: #ccb24c;        /* Button background color */
+    --bg-color-button2: #f7d683;       /* Button hover background color */
+    --bg-color-input: #fffdc0;         /* Input background color */
+    --color-labelLetra: #457d97;       /* Label text color */
+    --color-border: #f7d683;           /* Input border color */
+    --color-letraBoton: #fffffd;       /* Button text color */
+    --color-tituloFormulario: #457d97; /* Form title color */
+}
+
+/* Dark theme */
+.dark-theme {
+    --bg-color: #504375;
+    --bg-color-container: #ffe8ef;
+    --bg-color-button: #ed5887;
+    --bg-color-button2: #c22557;
+    --bg-color-input: #f1f1f1;
+    --color-labelLetra: #333;
+    --color-border: #ccc;
+    --color-letraBoton: #fff;
+    --color-tituloFormulario: black;
+}
+
+/* General body styling */
 body {
-    background-color: aqua;
+    background-color: var(--bg-color);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
 }
 
+/* Container styling */
+.container {
+    background-color: var(--bg-color-container);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Centered heading */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--color-tituloFormulario);
+}
+
+/* Form group styling */
 .form-group {
     margin-bottom: 15px;
 }
 
-.container {
-    background-color: #f1f1f1;
-    border-radius: 5px; 
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.6);
-    width: 50%;
-    text-align: center;
-    margin: 0 auto;
-    padding: 15px;
+/* Form margin */
+form {
+    margin-bottom: 0px;
 }
 
+/* Label styling */
+label {
+    margin-bottom: 5px;
+    display: block;
+    color: var(--color-labelLetra);
+    font-weight: bold;
+}
+
+/* Input field styling */
 input[type="email"],
 input[type="text"],
 input[type="password"] {
     border-radius: 5px;
-    padding: 5px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--bg-color-input);
 }
 
-label {
-    margin-bottom: 5px;
-    display: block;
-}
-
+/* Submit button styling */
 button[type="submit"] {
-    background-color: lightblue;
+    background-color: var(--bg-color-button);
     border-radius: 5px;
-    padding: 5px;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    color: var(--color-letraBoton);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+button[type="submit"]:hover {
+    background-color: var(--bg-color-button2);
+}
+
+/* Theme toggle button styling */
+.theme-toggle-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--bg-color-button);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: var(--color-letraBoton);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+    background-color: var(--bg-color-button2);
 }
